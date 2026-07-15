@@ -1,193 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="ko" class="scroll-smooth">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ㄱㅂㅅ - 미래를 설계하는 기술</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-
     <style>
-
         body { font-family: 'Inter', sans-serif; }
-
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
         .animate-fade-in { animation: fadeIn 1.2s ease-out forwards; }
-
-        
-
-        .brand-logo {
-
-            background-color: #2563eb;
-
-            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-
-            padding: 0.5rem 1.5rem;
-
-            display: inline-block;
-
-            font-weight: bold;
-
-            color: white;
-
-        }
-
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
-
+        .brand-logo { background-color: #2563eb; clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); padding: 0.5rem 1.5rem; display: inline-block; font-weight: bold; color: white; }
     </style>
-
 </head>
-
-<body class="bg-slate-950 text-white selection:bg-blue-600 selection:text-white">
-
-
+<body class="bg-slate-950 text-white">
 
     <nav class="fixed w-full z-50 px-8 py-6 flex items-center justify-between backdrop-blur-md bg-black/50 border-b border-white/10">
-
         <div class="brand-logo text-lg tracking-tight">ㄱㅂㅅ</div>
-
-        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
-
+        <div class="flex space-x-8 text-sm uppercase tracking-widest font-medium">
             <button onclick="openModal('aboutModal')" class="hover:text-blue-400 transition-colors">기업소개</button>
-
             <button onclick="openModal('orgModal')" class="hover:text-blue-400 transition-colors">조직도</button>
-
-            <!-- 채용공고 링크 수정됨 -->
-
-            <a href="https://padlet.com/sseunghyoo/padlet-wtjoxg8xtxohz0s4" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">채용공고</a>
-
+            <a href="https://padlet.com/sseunghyoo/padlet-wtjoxg8xtxohz0s4" target="_blank" class="hover:text-blue-400 transition-colors">채용공고</a>
         </div>
-
     </nav>
 
-
-
-    <main class="min-h-screen flex items-center justify-center relative overflow-hidden" 
-
-          style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;">
-
+    <main class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-slate-950/70"></div>
-
         <div class="text-center z-10 animate-fade-in px-4">
-
-            <h1 class="text-5xl md:text-8xl font-bold mb-6 drop-shadow-lg">미래를 설계하는<br>ㄱㅂㅅ의 기술</h1>
-
-            <p class="text-xl md:text-2xl text-blue-200 drop-shadow-md">Next Generation Innovation & Technology</p>
-
+            <h1 class="text-5xl md:text-8xl font-bold mb-6">미래를 설계하는<br>ㄱㅂㅅ의 기술</h1>
         </div>
-
     </main>
 
-
-
-    <section class="py-24 px-8 bg-slate-900 border-b border-white/5">
-
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
-
-            <div class="p-8 border border-white/10 rounded-2xl bg-black/20 hover:border-blue-500 transition-all">
-
-                <h3 class="text-2xl font-bold mb-4">Vision</h3>
-
-                <p class="text-gray-400">데이터와 기술의 융합을 통해 인류의 삶을 더욱 가치 있게 변화시키는 것이 우리의 미래입니다.</p>
-
-            </div>
-
-            <div class="p-8 border border-white/10 rounded-2xl bg-black/20 hover:border-blue-500 transition-all">
-
-                <h3 class="text-2xl font-bold mb-4">Technology</h3>
-
-                <p class="text-gray-400">AI 기반의 최적화 솔루션과 클라우드 아키텍처를 도입하여 산업의 표준을 제시합니다.</p>
-
-            </div>
-
-            <div class="p-8 border border-white/10 rounded-2xl bg-black/20 hover:border-blue-500 transition-all">
-
-                <h3 class="text-2xl font-bold mb-4">Global Reach</h3>
-
-                <p class="text-gray-400">전 세계의 파트너들과 협력하여 국경 없는 비즈니스 생태계를 구축하고 있습니다.</p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- 모달 영역 (기업소개, 조직도) -->
-
+    <!-- 기업소개 모달 -->
     <div id="aboutModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
-
-        <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-3xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
-
-            <div class="flex justify-between items-center mb-8">
-
-                <h2 class="text-3xl font-bold">기업소개</h2>
-
-                <button onclick="closeAllModals()" class="text-4xl hover:text-red-500 transition-colors">&times;</button>
-
+        <div class="bg-white rounded-2xl w-full max-w-4xl h-[80vh] flex flex-col overflow-hidden">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-gray-900">기업소개</h2>
+                <button onclick="closeAllModals()" class="text-2xl font-bold hover:text-red-500">&times;</button>
             </div>
-
+            <iframe src="1-1.html" class="w-full flex-grow"></iframe>
         </div>
-
     </div>
 
-
-
+    <!-- 조직도 모달 -->
     <div id="orgModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
-
-        <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar">
-
-            <div class="flex justify-between items-center mb-8">
-
-                <h2 class="text-3xl font-bold">조직도</h2>
-
-                <button onclick="closeAllModals()" class="text-4xl hover:text-red-500 transition-colors">&times;</button>
-
+        <div class="bg-white rounded-2xl w-full max-w-4xl h-[80vh] flex flex-col overflow-hidden">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-gray-900">조직도</h2>
+                <button onclick="closeAllModals()" class="text-2xl font-bold hover:text-red-500">&times;</button>
             </div>
-
+            <iframe src="1-2.html" class="w-full flex-grow"></iframe>
         </div>
-
     </div>
-
-
 
     <script>
-
-        function openModal(id) {
-
-            closeAllModals();
-
-            document.getElementById(id).classList.remove('hidden');
-
-        }
-
-
-
-        function closeAllModals() {
-
-            document.querySelectorAll('[id$="Modal"]').forEach(modal => {
-
-                modal.classList.add('hidden');
-
-            });
-
-        }
-
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeAllModals() { document.querySelectorAll('[id$="Modal"]').forEach(m => m.classList.add('hidden')); }
     </script>
-
 </body>
-
 </html>
