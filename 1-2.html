@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업 조직도</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* 커넥터 스타일 */
+        .line-v { width: 1px; height: 30px; background-color: #cbd5e1; }
+        .line-h { height: 1px; background-color: #cbd5e1; width: 100%; }
+        
+        .card {
+            transition: all 0.2s ease;
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+        .card:hover {
+            border-color: #94a3b8;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen py-16 px-4">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-slate-900 mb-2">Corporate Hierarchy</h1>
+            <p class="text-slate-500 font-medium">조직 구성도</p>
+        </header>
+
+        <!-- CEO -->
+        <div class="flex flex-col items-center">
+            <div class="card p-6 rounded-xl w-64 text-center shadow-sm">
+                <div class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-1">CEO</div>
+                <div class="text-xl font-bold text-slate-900">김창환</div>
+                <div class="text-sm text-slate-500 mt-1">대표이사</div>
+            </div>
+            <div class="line-v"></div>
+        </div>
+
+        <!-- Strategy Director -->
+        <div class="flex flex-col items-center mb-8">
+            <div class="card p-6 rounded-xl w-64 text-center shadow-sm">
+                <div class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1">Director</div>
+                <div class="text-xl font-bold text-slate-900">이승효</div>
+                <div class="text-sm text-slate-500 mt-1">전략이사</div>
+            </div>
+            <div class="line-v"></div>
+        </div>
+
+        <div class="relative w-full">
+            <!-- 가로 라인 -->
+            <div class="absolute top-0 left-12 right-12 h-[1px] bg-slate-300 hidden md:block"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Dept 1: 허언증 -->
+                <div class="flex flex-col items-center pt-4">
+                    <div class="hidden md:block h-4 w-[1px] bg-slate-300 mb-4"></div>
+                    <div class="card p-6 rounded-xl w-full max-w-[200px] text-center shadow-sm">
+                        <div class="font-bold text-slate-900 mb-1">차종현</div>
+                        <div class="text-xs font-medium text-blue-600 mb-4">허언증부서장</div>
+                        <div class="text-sm text-slate-400 italic">No team members</div>
+                    </div>
+                </div>
+
+                <!-- Dept 2: 니코틴 -->
+                <div class="flex flex-col items-center pt-4">
+                    <div class="hidden md:block h-4 w-[1px] bg-slate-300 mb-4"></div>
+                    <div class="card p-6 rounded-xl w-full max-w-[200px] text-center shadow-sm">
+                        <div class="font-bold text-slate-900 mb-1">송시온</div>
+                        <div class="text-xs font-medium text-blue-600 mb-4">니코틴부서장</div>
+                        <div class="space-y-1 text-left text-sm text-slate-600 border-t pt-3">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-slate-400 rounded-full"></div> 백병우</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dept 3: 인사팀 -->
+                <div class="flex flex-col items-center pt-4">
+                    <div class="hidden md:block h-4 w-[1px] bg-slate-300 mb-4"></div>
+                    <div class="card p-6 rounded-xl w-full max-w-[200px] text-center shadow-sm">
+                        <div class="font-bold text-slate-900 mb-1">김지윤</div>
+                        <div class="text-xs font-medium text-blue-600 mb-4">인사팀장</div>
+                        <div class="space-y-1 text-left text-sm text-slate-600 border-t pt-3">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-slate-400 rounded-full"></div> 장서연</div>
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-slate-400 rounded-full"></div> 한규현</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dept 4: 총무팀 -->
+                <div class="flex flex-col items-center pt-4">
+                    <div class="hidden md:block h-4 w-[1px] bg-slate-300 mb-4"></div>
+                    <div class="card p-6 rounded-xl w-full max-w-[200px] text-center shadow-sm">
+                        <div class="font-bold text-slate-900 mb-1">최내령</div>
+                        <div class="text-xs font-medium text-blue-600 mb-4">총무팀장</div>
+                        <div class="space-y-1 text-left text-sm text-slate-600 border-t pt-3">
+                            <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-slate-400 rounded-full"></div> 신주항</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-24 text-center text-slate-400 text-sm">
+            © 2026 Company Corp. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
