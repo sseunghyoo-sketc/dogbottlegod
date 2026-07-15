@@ -1,65 +1,121 @@
 <!DOCTYPE html>
+
 <html lang="ko" class="scroll-smooth">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ㄱㅂㅅ - 미래를 설계하는 기술</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
+
         body { font-family: 'Inter', sans-serif; }
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
         .animate-fade-in { animation: fadeIn 1.2s ease-out forwards; }
+
         .brand-logo { background-color: #2563eb; clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); padding: 0.5rem 1.5rem; display: inline-block; font-weight: bold; color: white; }
+
     </style>
+
 </head>
+
 <body class="bg-slate-950 text-white">
 
+
+
     <nav class="fixed w-full z-50 px-8 py-6 flex items-center justify-between backdrop-blur-md bg-black/50 border-b border-white/10">
-        <!-- 로고에 홈 링크 추가 -->
-        <a href="#" class="brand-logo text-lg tracking-tight">ㄱㅂㅅ</a>
-        
+
+        <div class="brand-logo text-lg tracking-tight">ㄱㅂㅅ</div>
+
         <div class="flex space-x-8 text-sm uppercase tracking-widest font-medium">
-            <!-- HOME 버튼 추가 -->
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeAllModals();" class="hover:text-blue-400 transition-colors">Home</button>
+
             <button onclick="openModal('aboutModal')" class="hover:text-blue-400 transition-colors">기업소개</button>
+
             <button onclick="openModal('orgModal')" class="hover:text-blue-400 transition-colors">조직도</button>
+
             <a href="https://padlet.com/sseunghyoo/padlet-wtjoxg8xtxohz0s4" target="_blank" class="hover:text-blue-400 transition-colors">채용공고</a>
+
         </div>
+
     </nav>
 
+
+
     <main class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;">
+
         <div class="absolute inset-0 bg-slate-950/70"></div>
+
         <div class="text-center z-10 animate-fade-in px-4">
+
             <h1 class="text-5xl md:text-8xl font-bold mb-6">미래를 설계하는<br>ㄱㅂㅅ의 기술</h1>
+
         </div>
+
     </main>
 
+
+
     <!-- 기업소개 모달 -->
+
     <div id="aboutModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
+
         <div class="bg-white rounded-2xl w-full max-w-4xl h-[80vh] flex flex-col overflow-hidden">
+
             <div class="flex justify-between items-center p-4 border-b">
+
                 <h2 class="text-xl font-bold text-gray-900">기업소개</h2>
+
                 <button onclick="closeAllModals()" class="text-2xl font-bold hover:text-red-500">&times;</button>
+
             </div>
+
             <iframe src="1-1.html" class="w-full flex-grow"></iframe>
+
         </div>
+
     </div>
+
+
 
     <!-- 조직도 모달 -->
+
     <div id="orgModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
+
         <div class="bg-white rounded-2xl w-full max-w-4xl h-[80vh] flex flex-col overflow-hidden">
+
             <div class="flex justify-between items-center p-4 border-b">
+
                 <h2 class="text-xl font-bold text-gray-900">조직도</h2>
+
                 <button onclick="closeAllModals()" class="text-2xl font-bold hover:text-red-500">&times;</button>
+
             </div>
+
             <iframe src="1-2.html" class="w-full flex-grow"></iframe>
+
         </div>
+
     </div>
 
+
+
     <script>
+
         function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+
         function closeAllModals() { document.querySelectorAll('[id$="Modal"]').forEach(m => m.classList.add('hidden')); }
+
     </script>
+
 </body>
+
 </html>
