@@ -16,8 +16,12 @@
 <body class="bg-slate-950 text-white">
 
     <nav class="fixed w-full z-50 px-8 py-6 flex items-center justify-between backdrop-blur-md bg-black/50 border-b border-white/10">
-        <div class="brand-logo text-lg tracking-tight">ㄱㅂㅅ</div>
+        <!-- 로고에 홈 링크 추가 -->
+        <a href="#" class="brand-logo text-lg tracking-tight">ㄱㅂㅅ</a>
+        
         <div class="flex space-x-8 text-sm uppercase tracking-widest font-medium">
+            <!-- HOME 버튼 추가 -->
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeAllModals();" class="hover:text-blue-400 transition-colors">Home</button>
             <button onclick="openModal('aboutModal')" class="hover:text-blue-400 transition-colors">기업소개</button>
             <button onclick="openModal('orgModal')" class="hover:text-blue-400 transition-colors">조직도</button>
             <a href="https://padlet.com/sseunghyoo/padlet-wtjoxg8xtxohz0s4" target="_blank" class="hover:text-blue-400 transition-colors">채용공고</a>
