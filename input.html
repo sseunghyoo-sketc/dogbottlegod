@@ -22,10 +22,6 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
-        
-        /* 조직도용 추가 스타일 */
-        .line-v { width: 1px; height: 30px; background-color: #cbd5e1; }
-        .card { transition: all 0.2s ease; background: white; border: 1px solid #e2e8f0; }
     </style>
 </head>
 <body class="bg-slate-950 text-white selection:bg-blue-600 selection:text-white">
@@ -35,11 +31,11 @@
         <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
             <button onclick="openModal('aboutModal')" class="hover:text-blue-400 transition-colors">기업소개</button>
             <button onclick="openModal('orgModal')" class="hover:text-blue-400 transition-colors">조직도</button>
+            <!-- 채용공고 링크 수정됨 -->
             <a href="https://padlet.com/sseunghyoo/padlet-wtjoxg8xtxohz0s4" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">채용공고</a>
         </div>
     </nav>
 
-    <!-- 메인 생략 (동일) -->
     <main class="min-h-screen flex items-center justify-center relative overflow-hidden" 
           style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-slate-950/70"></div>
@@ -49,39 +45,38 @@
         </div>
     </main>
 
-    <!-- 모달 영역: 내부 내용을 소스 1, 2에서 가져옴 -->
+    <section class="py-24 px-8 bg-slate-900 border-b border-white/5">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="p-8 border border-white/10 rounded-2xl bg-black/20 hover:border-blue-500 transition-all">
+                <h3 class="text-2xl font-bold mb-4">Vision</h3>
+                <p class="text-gray-400">데이터와 기술의 융합을 통해 인류의 삶을 더욱 가치 있게 변화시키는 것이 우리의 미래입니다.</p>
+            </div>
+            <div class="p-8 border border-white/10 rounded-2xl bg-black/20 hover:border-blue-500 transition-all">
+                <h3 class="text-2xl font-bold mb-4">Technology</h3>
+                <p class="text-gray-400">AI 기반의 최적화 솔루션과 클라우드 아키텍처를 도입하여 산업의 표준을 제시합니다.</p>
+            </div>
+            <div class="p-8 border border-white/10 rounded-2xl bg-black/20 hover:border-blue-500 transition-all">
+                <h3 class="text-2xl font-bold mb-4">Global Reach</h3>
+                <p class="text-gray-400">전 세계의 파트너들과 협력하여 국경 없는 비즈니스 생태계를 구축하고 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 모달 영역 (기업소개, 조직도) -->
     <div id="aboutModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
-        <div class="bg-gray-50 text-gray-800 border border-white/10 rounded-2xl p-8 max-w-4xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
+        <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-3xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold">기업소개</h2>
-                <button onclick="closeAllModals()" class="text-4xl text-gray-500 hover:text-red-500 transition-colors">&times;</button>
-            </div>
-            <!--[cite: 2]의 내용을 삽입 -->
-            <div class="prose max-w-none">
-                <h1 class="text-4xl font-bold mb-6">(주)ㄱㅂㅅ</h1>
-                <p class="text-xl italic mb-10">"완벽한 사람은 없지만, 함께라면 누구나 더 큰 가치를 만들어낼 수 있습니다."</p>
-                <!-- 상세내용 생략 가능하지만 1-2 내용을 여기에 넣으시면 됩니다 -->
-                <p>... 기업소개 상세 내용 ...</p>
+                <button onclick="closeAllModals()" class="text-4xl hover:text-red-500 transition-colors">&times;</button>
             </div>
         </div>
     </div>
 
     <div id="orgModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
-        <div class="bg-gray-50 text-gray-800 border border-white/10 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar">
+        <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar">
             <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-slate-900">조직도</h2>
-                <button onclick="closeAllModals()" class="text-4xl text-gray-500 hover:text-red-500 transition-colors">&times;</button>
-            </div>
-            <!--[cite: 1]의 내용을 삽입 -->
-            <div class="scale-90 origin-top">
-                <div class="flex flex-col items-center">
-                    <div class="card p-6 rounded-xl w-64 text-center shadow-sm">
-                        <div class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-1">CEO</div>
-                        <div class="text-xl font-bold text-slate-900">김창환</div>
-                    </div>
-                    <div class="line-v"></div>
-                </div>
-                <!-- 나머지 조직도 내용 추가 -->
+                <h2 class="text-3xl font-bold">조직도</h2>
+                <button onclick="closeAllModals()" class="text-4xl hover:text-red-500 transition-colors">&times;</button>
             </div>
         </div>
     </div>
@@ -91,6 +86,7 @@
             closeAllModals();
             document.getElementById(id).classList.remove('hidden');
         }
+
         function closeAllModals() {
             document.querySelectorAll('[id$="Modal"]').forEach(modal => {
                 modal.classList.add('hidden');
