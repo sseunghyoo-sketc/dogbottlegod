@@ -1,72 +1,51 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ㄱㅂㅅ - 미래를 설계하는 기술</title>
+    <title>ㄱㅂㅅ 기업 홈페이지</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fadeIn 1.2s ease-out forwards; }
-        .brand-logo { background-color: #2563eb; clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); padding: 0.5rem 1.5rem; display: inline-block; font-weight: bold; color: white; }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-slate-950 text-white">
+<body class="bg-black text-white m-0 p-0">
 
-    <nav class="fixed w-full z-50 px-8 py-6 flex items-center justify-between backdrop-blur-md bg-black/50 border-b border-white/10">
-        <div class="brand-logo text-lg tracking-tight">ㄱㅂㅅ</div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
-            <button onclick="openModal('aboutModal')" class="hover:text-blue-400 transition-colors">기업소개</button>
-            <button onclick="openModal('orgModal')" class="hover:text-blue-400 transition-colors">조직도</button>
-            <!-- [수정] 유효한 링크로 변경하거나 현재는 '#'으로 처리하세요 -->
-            <a href="#" class="hover:text-blue-400 transition-colors">채용공고</a>
+    <nav class="flex justify-between items-center px-8 py-6 w-full absolute top-0 z-20">
+        <!-- Logo Area -->
+        <div class="bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md tracking-wider transform -skew-x-12">
+            ㄱㅂㅅ
+        </div>
+        
+        <!-- Menu Items -->
+        <div class="flex space-x-8 text-sm font-medium opacity-90 hover:opacity-100 transition-opacity">
+            <a href="#" class="hover:text-blue-400">기업소개</a>
+            <a href="#" class="hover:text-blue-400">조직도</a>
+            <a href="#" class="hover:text-blue-400">채용공고</a>
         </div>
     </nav>
 
-    <main class="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-800">
-        <!-- [수정] 외부 이미지 대신 단색 배경 사용 (404 방지) -->
-        <div class="absolute inset-0 bg-slate-950/70"></div>
-        <div class="text-center z-10 animate-fade-in px-4">
-            <h1 class="text-5xl md:text-8xl font-bold mb-6 drop-shadow-lg">미래를 설계하는<br>ㄱㅂㅅ의 기술</h1>
-            <p class="text-xl md:text-2xl text-blue-200 drop-shadow-md">Next Generation Innovation & Technology</p>
+    <main class="relative h-screen w-full flex flex-col justify-center items-center text-center overflow-hidden">
+        
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+             style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
+        </div>
+
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 px-4">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                미래를 설계하는<br>ㄱㅂㅅ의 기술
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 tracking-widest uppercase">
+                Next Generation Innovation & Technology
+            </p>
         </div>
     </main>
 
-    <!-- [수정] 모달 내용 추가 -->
-    <div id="aboutModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
-        <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-3xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold">기업소개</h2>
-                <button onclick="closeAllModals()" class="text-4xl hover:text-red-500 transition-colors">&times;</button>
-            </div>
-            <p class="text-gray-300">건설 시스템의 디지털 전환을 선도하는 기술 중심 기업입니다.</p>
-        </div>
-    </div>
-
-    <div id="orgModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
-        <div class="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold">조직도</h2>
-                <button onclick="closeAllModals()" class="text-4xl hover:text-red-500 transition-colors">&times;</button>
-            </div>
-            <p class="text-gray-300">효율적인 현장 관리를 위한 전문 엔지니어링 조직으로 구성되어 있습니다.</p>
-        </div>
-    </div>
-
-    <script>
-        function openModal(id) {
-            closeAllModals();
-            document.getElementById(id).classList.remove('hidden');
-        }
-        function closeAllModals() {
-            document.querySelectorAll('[id$="Modal"]').forEach(modal => {
-                modal.classList.add('hidden');
-            });
-        }
-    </script>
 </body>
 </html>
